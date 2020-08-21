@@ -1,0 +1,25 @@
+<div class="h1 text-center bg-dark text-warning p-5 w-100"><i class="fa fa-film" aria-hidden="true"></i> Top Rated Movies</div>
+<div class="text-center" *ngIf="loading==true">    
+    <div class="spinner-grow text-primary spinx" role="status"></div>
+    <div class="spinner-grow text-success spinx" role="status"></div>
+    <div class="spinner-grow text-danger spinx" role="status"></div>
+    <div class="spinner-grow text-warning spinx" role="status"></div>
+        </div>
+<div class="container" *ngFor="let x of list">
+    <div class="row  mt-5  border-bottom pb-5">
+        <div class="col-md">
+            <img src={{imgurl}}{{x.poster_path}}>
+        </div>
+        <div class="col-md">
+            <p class="h1 text-danger"><u>{{x.title}}</u></p>
+            <p class="display-3 mt-4"><i class="fa fa-star text-warning"></i> {{x.vote_average}}</p>
+            <p class="h1"><i class="fa fa-calendar-check-o text-primary"></i> {{x.release_date}}</p>
+            <p class="h1"><i class="fa fa-user-circle text-danger"></i> {{x.vote_count}}</p>
+        <div class="pt-3">
+            <button class="btn btn-primary" (click)="funSet(x.id)">Details</button>
+        </div>
+
+        
+        </div>
+    </div>
+</div>
